@@ -1,0 +1,7 @@
+anotacoes/
+target/
+.idea/
+*.log
+*.zip
+*.swp
+*.iml

@@ -1,0 +1,21 @@
+# Swagger
+GET     /swagger.json                          controllers.SwaggerController.docs
+
+# Interface Swagger UI embutida
+GET     /docs/*file     controllers.Assets.versioned(path="/public/swagger", file: Asset)
+
+# Profissionais
+GET     /profissionais                controllers.ProfissionalController.listarProfissionais(request: Request)
+GET     /profissionais/:id            controllers.ProfissionalController.buscarPorId(id: Long)
+POST    /profissionais                controllers.ProfissionalController.salvar(request: Request)
+PUT     /profissionais/:id            controllers.ProfissionalController.atualizar(id: Long, request: Request)
+DELETE  /profissionais/:id            controllers.ProfissionalController.excluirLogicamente(id: Long)
+
+# Contatos
+GET     /contatos                     controllers.ContatoController.listarContatos(request: Request)
+GET     /contatos/:id                controllers.ContatoController.buscarPorId(id: Long)
+POST    /contatos                    controllers.ContatoController.salvar(request: Request)
+PUT     /contatos/:id                controllers.ContatoController.atualizar(id: Long, request: Request)
+DELETE  /contatos/:id                controllers.ContatoController.excluir(id: Long)
+
+

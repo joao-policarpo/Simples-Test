@@ -1,0 +1,20 @@
+----Primeiro temque iniciar o postgres no terminal
+
+sudo systemctl start postgresql
+
+----Rodar o play no terminal
+
+sbt run
+
+----Acessar o swagger com a documentação
+
+http://localhost:9000/docs/index.html
+
+----Subir build Docker
+
+sudo docker build -t simplestest .
+sudo docker run -p 9000:9000 simplestest
+
+*após eu mudar a build para o docker basta apenas dar (  sudo docker compose up  )
+
+*se mudar algo no docker ou em algo use ( sudo docker compose up --build )

@@ -1,0 +1,17 @@
+no play e preciso usar jpaApi.withTransaction manualmente, no spring o controle de transacao e feito automaticamente com @Transactional
+
+no play voce chama o entityManager diretamente, no spring o gerenciamento e interno e voce trabalha com JpaRepository
+
+no play voce precisa escrever join fetch para evitar lazy loading, no spring o relacionamento e carregado sob demanda
+
+no play as queries sao escritas manualmente em hql, no spring o framework gera automaticamente com base nos nomes dos metodos
+
+no play voce valida campos com uma classe separada, no spring as validacoes sao feitas com anotacoes como @NotBlank e @Valid
+
+no play voce monta manualmente a resposta json, no spring o objeto e retornado e o framework serializa com jackson
+
+no play voce precisa configurar o persistence.xml, no spring basta adicionar o starter no pom.xml e configurar via application.yml
+
+no play é necessario pegar o json do body, no spring se usa o RequestBody
+
+no play é necessario ter um arquivo ou json manualmente com a definicao do swagger, no swing tem o springdoc que faz sozinho

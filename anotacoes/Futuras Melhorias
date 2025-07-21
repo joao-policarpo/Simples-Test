@@ -1,0 +1,5 @@
+-Melhor o tratamento de exceções
+-Adicionar validações no JSON
+-Fazer testes de integração com banco em memória
+-Usar MapStruct
+-Paginação

@@ -1,0 +1,5 @@
+[debug] Copy resource mappings: 
+[debug] 	(/app/conf/docker.conf,/app/target/scala-2.13/classes/docker.conf)
+[debug] 	(/app/conf/routes,/app/target/scala-2.13/classes/routes)
+[debug] 	(/app/conf/application.conf,/app/target/scala-2.13/classes/application.conf)
+[debug] 	(/app/conf/swagger.conf,/app/target/scala-2.13/classes/swagger.conf)

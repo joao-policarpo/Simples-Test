@@ -1,0 +1,2 @@
+[info] /app/app/controllers/ProfissionalController.java: ProfissionalController.java uses or overrides a deprecated API.
+[info] /app/app/controllers/ProfissionalController.java: Recompile with -Xlint:deprecation for details.

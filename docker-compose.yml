@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: simplestest-db
+    environment:
+      POSTGRES_DB: simplestest_play
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345678
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - internal
+
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: simplestest-app
+    depends_on:
+      - db
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/app
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/simplestest_play
+      DB_USER: postgres
+      DB_PASS: 12345678
+    networks:
+      - internal
+
+
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    container_name: simplestest-tests
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/simplestest_play
+      DB_USER: postgres
+      DB_PASS: 12345678
+    command: ["sbt", "test"]
+    networks:
+      - internal
+
+volumes:
+  pgdata:
+
+networks:
+  internal:
